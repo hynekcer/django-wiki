@@ -51,7 +51,7 @@ if hasattr(django_settings, 'TEMPLATES'):
     if len(backends) == 1:
         TEMPLATE_CONTEXT_PROCESSORS = backends[0].get('OPTIONS', {}).get('context_processors', [])
 
-if 'django.contrib.auth.context_processors.auth' not in django_settings.TEMPLATE_CONTEXT_PROCESSORS:
+if 'django.contrib.auth.context_processors.auth' not in TEMPLATE_CONTEXT_PROCESSORS:
     raise ImproperlyConfigured(
         'django-wiki: needs django.contrib.auth.context_processors.auth in TEMPLATE_CONTEXT_PROCESSORS')
 
